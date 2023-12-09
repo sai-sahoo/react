@@ -22,8 +22,8 @@ const Body = () => {
         const data = await fetch(RES_LIST_URL);
         const resList = await data.json();
         // console.log(resList?.data);
-        setListOfRestaurants(resList?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredList(resList?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setListOfRestaurants(resList?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredList(resList?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
     // console.log('onlineStatus', onlineStatus);
@@ -37,7 +37,7 @@ const Body = () => {
         <div className="body">
             <div className="filter">
                 <div className="search m-4 p-4">
-                    <input type="text" className="border border-solid border-black" value={searchText} placeholder="Type.." onChange={(e) => {
+                    <input type="text" data-testid="searchInput" className="border border-solid border-black" value={searchText} placeholder="Type.." onChange={(e) => {
                         setsearchText(e.target.value);
                     }} />
                     <button className="px-4 py-2 bg-green-100 m-4" onClick={() => {
